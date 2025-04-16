@@ -1,156 +1,281 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Avaliação de Risco Cardíaco</title>  <link rel="stylesheet" href="styles.css"></head><body>  <div class="container"><h1>Formulário de Avaliação de Risco Cardíaco</h1>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avaliação de Risco Cardíaco</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
-  <main class="container">
-    <h1>Formulário de Avaliação de Risco Cardíaco</h1>
 
-    <div class="alerta" role="alert">
-      <strong>Aviso:</strong> Este sistema está em desenvolvimento e não substitui diagnóstico médico.
-      Os resultados são indicativos e não devem ser considerados como laudo clínico.
+<div class="alerta">
+
+  <strong>Aviso:</strong> Este sistema está em desenvolvimento e não substitui diagnóstico médico. Os resultados são indicativos e não devem ser considerados como laudo clínico.
+
+</div>
+
+
+
+<form>
+
+  <section>
+
+    <h2>🔹 Identificatórios</h2>
+
+
+
+    <label for="nome">Nome *</label>
+
+    <input type="text" id="nome" name="nome" required>
+
+
+
+    <label for="email">E-mail *</label>
+
+    <input type="email" id="email" name="email" required>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>🔹 Dados de Relevância</h2>
+
+
+
+    <label for="age">Idade *</label>
+
+    <input type="number" id="age" name="age" min="1" max="120" required>
+
+    <div class="info-box">A idade é um fator importante. Após os 40 anos, o risco aumenta. Mulheres têm risco mais elevado após a menopausa.</div>
+
+
+
+    <div class="card">
+
+        <button type="button" class="card-header">Clique para saber mais</button>
+
+        <div class="card-content">
+
+          <p>
+
+            <strong>• 20-39 anos:</strong> Risco baixo (pode variar por histórico familiar, obesidade, etc.).<br>
+
+            <strong>• 40-59 anos:</strong> Risco moderado, aumenta significativamente após os 40.<br>
+
+            <strong>• 60+ anos:</strong> Risco alto.<br>
+
+            <strong>• Diferenças por sexo:</strong> Homens tendem a apresentar riscos mais cedo (após 45 anos); mulheres após a menopausa (55+ anos).
+
+          </p>
+
+        </div>
+
+      </div>
+
+      
+
+
+
+    <label for="sex">Sexo *</label>
+
+    <select id="sex" name="sex" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Feminino</option>
+
+      <option value="1">Masculino</option>
+
+    </select>
+
+    <div class="info-box">Homens apresentam risco mais cedo. Mulheres têm sintomas diferentes e proteção hormonal até a menopausa.</div>
+
+
+
+
+
+    <label for="cp">Tipo de dor no peito *</label>
+
+    <select id="cp" name="cp" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Dor típica de angina</option>
+
+      <option value="1">Dor atípica</option>
+
+      <option value="2">Dor não anginosa</option>
+
+      <option value="3">Assintomático</option>
+
+    </select>
+
+    <div class="info-box">Dor no peito pode indicar risco cardíaco. Mesmo sem dor (assintomático), pode haver riscos.</div>
+
+
+
+    <div class="card">
+
+      <button type="button" class="card-header">Clique para saber mais</button>
+
+      <div class="card-content">
+
+        <p><strong>0 - Dor típica de angina:</strong> Dor no peito que ocorre quando o coração não recebe sangue suficiente. Caracteriza-se por sensação de pressão ou aperto no centro do peito.</p>
+
+        <p><strong>1 - Dor atípica:</strong> Dor com características não usuais, pode ocorrer em locais incomuns e nem sempre aliviada com repouso.</p>
+
+        <p><strong>2 - Dor não anginosa:</strong> Dor que não se encaixa nas características da angina. Normalmente associada a causas musculares ou digestivas.</p>
+
+        <p><strong>3 - Assintomático:</strong> Pessoa sem dor no peito, mas com risco potencial devido a condições cardíacas subjacentes.</p>
+
+      </div>
+
     </div>
 
-    <form action="#" method="post">
-      
-      <fieldset>
-        <legend>🔹 Identificação</legend>
 
-        <label for="nome">Nome *</label>
-        <input type="text" id="nome" name="nome" required>
 
-        <label for="email">E-mail *</label>
-        <input type="email" id="email" name="email" required>
-      </fieldset>
+    <label for="trestbps">Pressão arterial em repouso (mmHg) *</label>
 
-      <fieldset>
-        <legend>🔹 Dados de Relevância</legend>
+    <input type="number" id="trestbps" name="trestbps" required>
 
-        <label for="age">Idade *</label>
-        <input type="number" id="age" name="age" min="1" max="120" required>
-        <div class="info-box">A idade é um fator importante. Após os 40 anos, o risco aumenta.</div>
+    <div class="info-box">Acima de 120 mmHg pode indicar pressão elevada. Riscos aumentam com valores altos.</div>
 
-        <button type="button" class="card-header" aria-expanded="false" aria-controls="idade-info">
-          Clique para saber mais
-        </button>
-        <div id="idade-info" class="card-content" hidden>
-          <p><strong>• 20-39:</strong> Risco baixo.</p>
-          <p><strong>• 40-59:</strong> Risco moderado.</p>
-          <p><strong>• 60+:</strong> Risco alto.</p>
-          <p><strong>Sexo:</strong> Homens → 45+, Mulheres → 55+ (menopausa).</p>
-        </div>
 
-        <label for="sex">Sexo *</label>
-        <select id="sex" name="sex" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Feminino</option>
-          <option value="1">Masculino</option>
-        </select>
-        <div class="info-box">Mulheres têm proteção hormonal até a menopausa. Homens apresentam risco mais cedo.</div>
 
-        <label for="cp">Tipo de dor no peito *</label>
-        <select id="cp" name="cp" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Dor típica de angina</option>
-          <option value="1">Dor atípica</option>
-          <option value="2">Dor não anginosa</option>
-          <option value="3">Assintomático</option>
-        </select>
-        <div class="info-box">Mesmo sem dor, pode haver risco cardíaco.</div>
+    <label for="chol">Colesterol sérico (mg/dL) *</label>
 
-        <button type="button" class="card-header" aria-expanded="false" aria-controls="dor-info">
-          Clique para saber mais
-        </button>
-        <div id="dor-info" class="card-content" hidden>
-          <p><strong>0:</strong> Dor típica de angina.</p>
-          <p><strong>1:</strong> Dor atípica.</p>
-          <p><strong>2:</strong> Dor não anginosa.</p>
-          <p><strong>3:</strong> Assintomático.</p>
-        </div>
+    <input type="number" id="chol" name="chol" required>
 
-        <label for="trestbps">Pressão arterial em repouso (mmHg) *</label>
-        <input type="number" id="trestbps" name="trestbps" required>
-        <div class="info-box">Acima de 120 mmHg pode indicar pressão elevada.</div>
+    <div class="info-box">Acima de 200 é preocupante. Quanto maior, maior o risco cardiovascular.</div>
 
-        <label for="chol">Colesterol sérico (mg/dL) *</label>
-        <input type="number" id="chol" name="chol" required>
-        <div class="info-box">Acima de 200 é preocupante.</div>
 
-        <label for="fbs">Glicemia em jejum *</label>
-        <select id="fbs" name="fbs" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Menor que 120</option>
-          <option value="1">120 ou mais</option>
-        </select>
-        <div class="info-box">Acima de 120 indica risco de diabetes.</div>
 
-        <label for="restecg">Eletrocardiograma em repouso *</label>
-        <select id="restecg" name="restecg" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Normal</option>
-          <option value="1">Anormalidades</option>
-          <option value="2">Alterações significativas</option>
-        </select>
-        <div class="info-box">Pode indicar problemas cardíacos.</div>
+    <label for="fbs">Glicemia em jejum *</label>
 
-        <label for="thalach">Frequência cardíaca máxima (bpm) *</label>
-        <input type="number" id="thalach" name="thalach" required>
-        <div class="info-box">Valores baixos indicam menor capacidade cardíaca.</div>
+    <select id="fbs" name="fbs" required>
 
-        <label for="exang">Angina induzida por esforço *</label>
-        <select id="exang" name="exang" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Não</option>
-          <option value="1">Sim</option>
-        </select>
-        <div class="info-box">Se "sim", pode haver isquemia causada por esforço.</div>
+      <option value="" selected disabled>Selecione...</option>
 
-        <label for="oldpeak">Depressão do segmento ST *</label>
-        <input type="number" id="oldpeak" name="oldpeak" step="0.1" required>
-        <div class="info-box">Valores acima de 2 sugerem risco de isquemia.</div>
+      <option value="0">Menor que 120</option>
 
-        <label for="slope">Inclinação do segmento ST *</label>
-        <select id="slope" name="slope" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Ascendente</option>
-          <option value="1">Plana</option>
-          <option value="2">Descendente</option>
-        </select>
-        <div class="info-box">Descendente indica maior risco.</div>
+      <option value="1">120 ou mais</option>
 
-        <label for="ca">Nº de vasos principais obstruídos *</label>
-        <select id="ca" name="ca" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-        <div class="info-box">Quanto maior o número, maior a gravidade.</div>
+    </select>
 
-        <label for="thal">Talassemia *</label>
-        <select id="thal" name="thal" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="0">Normal</option>
-          <option value="1">Defeito fixo</option>
-          <option value="2">Defeito reversível</option>
-          <option value="3">Outros</option>
-        </select>
-        <div class="info-box">Defeitos indicam possíveis problemas de irrigação.</div>
+    <div class="info-box">Valores maiores que 120 indicam risco de diabetes, afetando o coração.</div>
 
-      </fieldset>
 
-      <button type="submit">Enviar Avaliação</button>
-    </form>
-  </main>
 
-  <script src="script.js"></script>
-</body>
+    <label for="restecg">Eletrocardiograma em repouso *</label>
 
-</html>
+    <select id="restecg" name="restecg" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Normal</option>
+
+      <option value="1">Anormalidades</option>
+
+      <option value="2">Alterações significativas</option>
+
+    </select>
+
+    <div class="info-box">Anormalidades no ECG podem ser sinais precoces de risco cardíaco.</div>
+
+
+
+    <label for="thalach">Frequência cardíaca máxima (bpm) *</label>
+
+    <input type="number" id="thalach" name="thalach" required>
+
+    <div class="info-box">Valores baixos indicam menor capacidade cardíaca. Altos podem indicar bom condicionamento, mas precisam de contexto.</div>
+
+
+
+    <label for="exang">Angina induzida por esforço *</label>
+
+    <select id="exang" name="exang" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Não</option>
+
+      <option value="1">Sim</option>
+
+    </select>
+
+    <div class="info-box">Se "sim", pode haver isquemia causada por esforço físico.</div>
+
+
+
+    <label for="oldpeak">Depressão do segmento ST *</label>
+
+    <input type="number" id="oldpeak" name="oldpeak" step="0.1" required>
+
+    <div class="info-box">Valores acima de 2 sugerem risco aumentado de isquemia cardíaca.</div>
+
+
+
+    <label for="slope">Inclinação do segmento ST *</label>
+
+    <select id="slope" name="slope" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Ascendente</option>
+
+      <option value="1">Plana</option>
+
+      <option value="2">Descendente</option>
+
+    </select>
+
+    <div class="info-box">Segmento descendente é mais preocupante; indica maior risco.</div>
+
+
+
+    <label for="ca">Número de vasos principais obstruídos *</label>
+
+    <select id="ca" name="ca" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">0</option>
+
+      <option value="1">1</option>
+
+      <option value="2">2</option>
+
+      <option value="3">3</option>
+
+    </select>
+
+    <div class="info-box">Quanto maior o número, maior a gravidade da obstrução.</div>
+
+
+
+    <label for="thal">Talassemia *</label>
+
+    <select id="thal" name="thal" required>
+
+      <option value="" selected disabled>Selecione...</option>
+
+      <option value="0">Normal</option>
+
+      <option value="1">Defeito fixo</option>
+
+      <option value="2">Defeito reversível</option>
+
+      <option value="3">Outros</option>
+
+    </select>
+
+    <div class="info-box">Defeitos indicam possíveis problemas de irrigação sanguínea no coração.</div>
+
+
+
+  </section>
+
+
+
+  <button type="submit">Enviar Avaliação</button>
+
+</form>
+
+  </div><script src="script.js"></script></body></html>
