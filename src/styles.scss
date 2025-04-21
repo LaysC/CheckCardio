@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body: #f4f6f8;
+  --container: #ffffff;
+  --section: #fdfcfc;
+  --shadow1: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow2: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  --primary: #7D0A0A;
+  --primary-dark: #5d0808;
+  --info-bg: #EEEEEE;
+  --info-border: #7D0A0A;
+  --alert-bg: #fff3cd;
+  --alert-border: #EAD196;
+  --text: #333333;
+  --text-secondary: #666666;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--body);
+  padding: 20px;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}

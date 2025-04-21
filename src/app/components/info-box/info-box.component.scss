@@ -1,0 +1,18 @@
+.info-box {
+    background-color: var(--info-bg);
+    border-left: 5px solid var(--info-border);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin: 0.5rem 0 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .info-box .icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  

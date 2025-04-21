@@ -1,0 +1,8 @@
+<div class="card">
+    <button class="card-header" (click)="toggleContent()">
+      {{ title }}
+    </button>
+    <div class="card-content" [ngClass]="{ 'active': isActive }">
+      <ng-content></ng-content>
+    </div>
+  </div>  

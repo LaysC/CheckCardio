@@ -1,0 +1,20 @@
+.alerta {
+    background-color: var(--alert-bg);
+    border: 1px solid var(--alert-border);
+    color: var(--text-secondary);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  
+    &.info {
+      background-color: var(--info-bg);
+      border-color: var(--info-border);
+    }
+  
+    &.alert {
+      background-color: var(--alert-bg);
+      border-color: var(--alert-border);
+    }
+  }  

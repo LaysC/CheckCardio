@@ -1,0 +1,18 @@
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    margin-top: 1.5rem;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+  }  

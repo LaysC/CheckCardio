@@ -1,0 +1,45 @@
+.card {
+    margin: 1rem 0;
+    background-color: var(--surface-alt);
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    overflow: hidden;
+  
+    .card-header {
+      width: 100%;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+      transition: background-color var(--transition);
+  
+      &:hover {
+        background-color: var(--primary-dark);
+      }
+    }
+  
+    .card-content {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        height var(--transition),
+        padding var(--transition);
+  
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        padding: 1rem;
+      }
+    }
+  }
+  

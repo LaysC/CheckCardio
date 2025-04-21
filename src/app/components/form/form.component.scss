@@ -1,0 +1,42 @@
+  .DadosIdentificatorios,
+  .DadosRelevantes {
+    max-width: 1020px;
+    margin: 0 auto;
+    background-color: var(--section);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow2);
+    margin-bottom: 30px;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.25rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: var(--surface);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  input:focus,
+  select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+  }

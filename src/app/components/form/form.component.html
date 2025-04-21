@@ -1,0 +1,166 @@
+<section class="DadosIdentificatorios">
+  <h2>♦️ Identificatórios</h2>
+  <form (ngSubmit)="enviarDados()">
+    <!-- Inputs para os dados identificatórios -->
+    <label for="nome">Nome: *</label>
+    <input type="text" id="nome" [(ngModel)]="nome" name="nome" required>
+
+    <label for="email">Email: *</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+  </form>
+</section>
+
+<section class="DadosRelevantes">
+  <h2>♦️ Dados de Relevância</h2>
+  <form (ngSubmit)="enviarDados()">
+    <!-- Inputs para os dados relevantes -->
+    <label for="age">Idade: *</label>
+    <input type="number" id="age" name="age" [(ngModel)]="age" min="1" max="100" required>
+    <app-info-box message="A idade é um dos fatores mais relevantes para doenças cardiovasculares."></app-info-box>
+    <app-card>
+      <strong>• 20-39 anos:</strong> Risco baixo (pode variar por histórico familiar, obesidade, etc.).<br>
+      <strong>• 40-59 anos:</strong> Risco moderado, aumenta significativamente após os 40.<br>
+      <strong>• 60+ anos:</strong> Risco alto.<br>
+      <strong>• Diferenças por sexo:</strong> Homens tendem a apresentar riscos mais cedo (após 45 anos);
+      mulheres após a menopausa (55+ anos).
+    </app-card>
+
+    <label for="sex">Sexo: *</label>
+    <select id="sex" [(ngModel)]="sex" name="sex" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Feminino</option>
+      <option value="1">Masculino</option>
+    </select>
+    <app-info-box
+      message="Homens apresentam risco mais cedo. Mulheres têm sintomas diferentes e proteção hormonal até a menopausa."></app-info-box>
+
+    <label for="cp">Tipo de dor no peito: *</label>
+    <select id="cp" [(ngModel)]="cp" name="cp" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Dor típica de angina</option>
+      <option value="1">Dor atípica</option>
+      <option value="2">Dor não anginosa</option>
+      <option value="3">Assintomático</option>
+    </select>
+    <app-info-box
+      message="Dor no peito pode indicar risco cardíaco. Mesmo sem dor (assintomático), pode haver riscos."></app-info-box>
+    <app-card>
+      <p><strong>0 - Dor típica de angina:</strong> Pressão ou aperto no centro do peito, geralmente com esforço ou
+        estresse.</p>
+      <p><strong>1 - Dor atípica:</strong> Dor em locais incomuns (como costas ou mandíbula), com características
+        diferentes da angina.</p>
+      <p><strong>2 - Dor não anginosa:</strong> Dor ligada a causas musculares, digestivas ou ansiedade, sem relação com
+        o coração.</p>
+      <p><strong>3 - Assintomático:</strong> Sem dor no peito, mas com risco cardíaco por outros fatores.</p>
+    </app-card>
+
+    <label for="trestbps">Pressão arterial em repouso (mmHg): *</label>
+    <input type="number" id="trestbps" [(ngModel)]="trestbps" name="trestbps" min="90" max="200" placeholder="Entre 90 e 200 mmHg" required>
+    <app-card>
+      <p><strong>• &lt;120:</strong> Pressão arterial normal.</p>
+      <p><strong>• 120-139:</strong> Pré-hipertensão (pressão um pouco elevada).</p>
+      <p><strong>• 140-159:</strong> Hipertensão estágio 1 (pressão alta leve a moderada).</p>
+      <p><strong>• 160+:</strong> Hipertensão estágio 2 (pressão alta mais grave).</p>
+    </app-card>
+
+    <label for="chol">Colesterol sérico (mg/dL): *</label>
+    <input type="number" id="chol" [(ngModel)]="chol" name="chol" min="100" max="400" placeholder="Entre 100 e 400 mg/dL" required>
+    <app-card>
+      <p><strong>• &lt;200:</strong> Desejável - Nível de colesterol considerado saudável.</p>
+      <p><strong>• 200-239:</strong> Limítrofe - Nível de colesterol um pouco elevado, indicando risco moderado.</p>
+      <p><strong>• &#8805;240:</strong> Alto - Nível de colesterol elevado, com risco aumentado para doenças cardíacas.
+      </p>
+    </app-card>
+
+    <label for="fbs">Glicemia em jejum: *</label>
+    <select id="fbs" [(ngModel)]="fbs" name="fbs" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Menor que 120</option>
+      <option value="1">120 ou mais</option>
+    </select>
+    <app-info-box message="“≥120 mg/dL” indica risco aumentado de diabetes, que impacta o coração."></app-info-box>
+
+    <label for="restecg">Eletrocardiograma em repouso: *</label>
+    <select id="restecg" [(ngModel)]="restecg" name="restecg" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Normal</option>
+      <option value="1">Anormalidades</option>
+      <option value="2">Alterações significativas</option>
+    </select>
+
+    <label for="thalach">Frequência cardíaca máxima (bpm): *</label>
+    <input type="number" id="thalach" [(ngModel)]="thalach" name="thalach" required>
+    <app-info-box message="Normalmente entre 60 e 220 bpm."></app-info-box>
+    <app-card>
+      <p><strong>• Frequência baixa:</strong> Pode indicar baixa capacidade cardiovascular, ou seja, um coração que não
+        está funcionando com eficiência durante o exercício.</p><br>
+      <p><strong>• Frequência alta:</strong> Pode indicar boa aptidão física, mas deve ser analisada no contexto, pois
+        em algumas situações pode ser sinal de esforço excessivo ou problema de saúde.</p>
+    </app-card>
+
+    <label for="exang">Angina induzida por esforço: *</label>
+    <select id="exang" [(ngModel)]="exang" name="exang" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Não</option>
+      <option value="1">Sim</option>
+    </select>
+    <app-info-box message="Valor “Sim” indica possível isquemia durante esforço físico."></app-info-box>
+    <app-card>
+      <p><strong>• Angina induzida por esforço:</strong> É uma dor no peito que ocorre quando o coração não recebe
+        sangue suficiente devido ao aumento do esforço, como durante atividade física ou estresse. Geralmente, a dor é
+        aliviada com o descanso.</p>
+    </app-card>
+
+    <label for="oldpeak">Depressão do segmento ST: *</label>
+    <input type="number" id="oldpeak" [(ngModel)]="oldpeak" name="oldpeak" step="0.1" min="0" max="6" required>
+    <app-card>
+      <p>A <strong>depressão do segmento ST</strong> pode indicar risco de isquemia cardíaca. Valores maiores,
+        especialmente acima de 2, são altamente sugestivos de problemas cardíacos.</p>
+    </app-card>
+
+    <label for="slope">Inclinação do segmento ST: *</label>
+    <select id="slope" [(ngModel)]="slope" name="slope" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Ascendente</option>
+      <option value="1">Plana</option>
+      <option value="2">Descendente</option>
+    </select>
+    <app-card>
+      <p><strong>A inclinação do segmento ST:</strong> Refere-se ao formato de uma linha do exame de coração. Ele ajuda
+        os médicos a entender o risco de problemas cardíacos.</p><br>
+      <p><strong>0:</strong> Ascendente (linha sobe) - Baixo risco</p>
+      <p><strong>1:</strong> Plana (linha reta) - Risco intermediário</p>
+      <p><strong>2:</strong> Descendente (linha desce) - Alto risco</p>
+    </app-card>
+
+    <label for="ca">Número de vasos principais obstruídos: *</label>
+    <select id="ca" [(ngModel)]="ca" name="ca" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <app-card>
+      <p><strong>Obstruções em vasos:</strong> Refere-se à presença de bloqueios nos vasos sanguíneos, o que pode afetar
+        o
+        fluxo de sangue para o coração.</p><br>
+      <p><strong>0:</strong> Sem obstruções - Não há bloqueios nos vasos sanguíneos.</p>
+      <p><strong>1–3:</strong> Obstruções em vasos - O risco aumenta conforme o número e a gravidade dos bloqueios.</p>
+    </app-card>
+
+    <label for="thal">Talassemia *</label>
+    <select id="thal" [(ngModel)]="thal" name="thal" required>
+      <option value="" selected disabled>Selecione...</option>
+      <option value="0">Normal</option>
+      <option value="1">Defeito fixo</option>
+      <option value="2">Defeito reversível</option>
+      <option value="3">Outros</option>
+    </select>
+    <app-info-box message="Defeitos podem indicar fluxo sanguíneo anormal, elevando o risco."></app-info-box>
+  </form>
+
+  <div *ngIf="resposta">
+    <strong>Resposta:</strong> {{ resposta }}
+    </div> <!-- Adicionado -->
+</section>
