@@ -28,7 +28,7 @@ export class FormComponent {
   constructor(private http: HttpClient) {}
 
   enviarDados() {
-    const url = `http://localhost/ApiColetaDados.php?nome=${encodeURIComponent(this.nome)}&email=${encodeURIComponent(this.email)}&age=${this.age}&sex=${encodeURIComponent(this.sex)}&cp=${encodeURIComponent(this.cp)}&trestbps=${this.trestbps}&chol=${this.chol}&fbs=${encodeURIComponent(this.fbs)}&restecg=${encodeURIComponent(this.restecg)}&thalach=${this.thalach}&exang=${encodeURIComponent(this.exang)}&oldpeak=${this.oldpeak}&slope=${encodeURIComponent(this.slope)}&ca=${encodeURIComponent(this.ca)}&thal=${encodeURIComponent(this.thal)}`;
+    const url = `https://da92677f-f83c-4399-9c31-b3de5287f6af-00-kvr0kwlloun6.riker.replit.dev/?nome=${encodeURIComponent(this.nome)}&email=${encodeURIComponent(this.email)}&age=${this.age}&sex=${encodeURIComponent(this.sex)}&cp=${encodeURIComponent(this.cp)}&trestbps=${this.trestbps}&chol=${this.chol}&fbs=${encodeURIComponent(this.fbs)}&restecg=${encodeURIComponent(this.restecg)}&thalach=${this.thalach}&exang=${encodeURIComponent(this.exang)}&oldpeak=${this.oldpeak}&slope=${encodeURIComponent(this.slope)}&ca=${encodeURIComponent(this.ca)}&thal=${encodeURIComponent(this.thal)}`;
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (res) => this.resposta = res,
